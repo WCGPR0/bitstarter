@@ -2,10 +2,10 @@ var  express = require('express');
 
 var app = express.createServer(express.logger());
 var fs = require('fs');
-var buffer = new Buffer(fs.readFile('/index.html', function (err, data) {
+var buffer = fs.Readfile('/index.html', function (err, data) {
   if (err) throw err;
   console.log(data);
-}));
+});
 
 app.get('/', function(request, response) {
   response.send(buffer.toString('utf8'));
